@@ -1,38 +1,175 @@
-.App {
-  text-align: center;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+@font-face {
+  font-family: "Burelom";
+  src: url("./assets/fonts/FontsFree-Net-burelom-regular.ttf")
+    format("truetype");
+  font-weight: normal;
+  font-style: normal;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  font-family: "Burelom", sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+a {
+  color: inherit;
+}
+
+.notAvailable {
+  display: none !important;
+}
+
+@media screen and (max-width: 1100px) {
+  .Home {
+    display: none !important;
+  }
+
+  .notAvailable {
+    display: flex !important;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* crosuel */
+
+.swiper {
+  /* position: absolute;
+  bottom: 0; */
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  width: 100%;
+  height: 100vh;
+  /* justify-content: center; */
+
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
-.App-link {
-  color: #61dafb;
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  /* width: 300px;
+  height: 300px; */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.team {
+  visibility: hidden; /* يبدأ العنصر غير مرئي */
+  opacity: 0;
+
+  font-size: 20px;
+  color: #cecece;
+  animation: fadeIn 2s forwards; /* تطبيق الأنيميشن */
+}
+
+.present {
+  visibility: hidden; /* يبدأ العنصر غير مرئي */
+  opacity: 0;
+
+  font-size: 18px;
+  color: #cecece;
+  animation: fadeIn 3s forwards; /* تطبيق الأنيميشن */
+  animation-delay: 2s; /* تأخير 2 ثواني */
+}
+
+.project-name {
+  visibility: hidden; /* يبدأ العنصر غير مرئي */
+  opacity: 0;
+
+  font-size: 18px;
+  color: #cecece;
+  animation: fadeIn 3s forwards; /* تطبيق الأنيميشن */
+  animation-delay: 5s; /* تأخير 4 ثواني */
+}
+
+.start {
+  visibility: hidden; /* يبدأ العنصر غير مرئي */
+  opacity: 0;
+
+  font-size: 17px;
+  color: #cecece;
+  cursor: pointer;
+  animation: startfadeIn 2s forwards; /* تطبيق الأنيميشن */
+  animation-delay: 8s; /* تأخير 6 ثواني */
+}
+
+/* //intro meassages animation  */
+@keyframes fadeIn {
+  0% {
+    visibility: hidden; /* يبدأ العنصر غير مرئي */
+    opacity: 0;
   }
-  to {
-    transform: rotate(360deg);
+  25% {
+    visibility: visible; /* يصبح مرئي */
+    opacity: 1;
+  }
+  75% {
+    visibility: visible; /* يبقى مرئي */
+    opacity: 1;
+  }
+  100% {
+    visibility: hidden; /* يختفي العنصر */
+    opacity: 0;
   }
 }
+@keyframes startfadeIn {
+  0% {
+    visibility: hidden; /* يبدأ العنصر غير مرئي */
+    opacity: 0;
+  }
+  100% {
+    visibility: visible; /* يصبح مرئي */
+    opacity: 1;
+  }
+}
+
+/* //Transition page style */
+.slide-in {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #000000;
+  transform-origin: bottom;
+  z-index: 99999999999;
+}
+
+.slide-out {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #000000;
+  transform-origin: top;
+  /* z-index: 99999999999; */
+}
+
+
+
+
+/* .container {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+} */
+
+/* canvas {
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: pixelated;
+  image-rendering: optimize-contrast;
+} */
