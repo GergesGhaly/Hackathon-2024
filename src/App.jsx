@@ -74,7 +74,7 @@ function App() {
         },
       ],
       description:
-        "Proxima Centauri b is an exoplanet located in the habitable zone of the red dwarf star Proxima Centauri. It is considered one of the best candidates for potential habitability due to its Earth-like size and distance from its star.",
+        "Kepler-452b: The Mysterious Exoplanet Sparking Curiosity About the Possibility of Life Beyond Earth, With Its Earth-Like Characteristics and Position in the Habitable Zone.",
       path: "/planets/model/kepler_-_452b_planet.glb",
       scale: 1.5,
       fovPercentage: 2.5,
@@ -83,7 +83,7 @@ function App() {
     {
       name: "kepler_22_b",
       description:
-        "LHS 1140 b is an exoplanet orbiting the red dwarf star LHS 1140. It is a super-Earth located approximately 40 light-years away from Earth and lies within the habitable zone of its star.",
+        "Kepler-22b: The Fascinating Exoplanet That Captivates Scientists with Its Earth-Like Traits and Location in the Habitable Zone of a Sun-Like Star, Opening New Possibilities for Life Beyond Our Planet",
       data: [
         {
           dataTitle: "Have you ever heard of a planet called Kepler-22b ?",
@@ -110,7 +110,7 @@ function App() {
     {
       name: "Proxima_b",
       description:
-        "Teegarden's Star b is a potentially habitable exoplanet located around Teegarden's Star, a red dwarf about 12.5 light-years away. It is similar in size to Earth and is one of the closest known exoplanets.",
+        "Proxima Centauri b is an exoplanet located in the habitable zone of the red dwarf star Proxima Centauri. It is considered one of the best candidates for potential habitability due to its Earth-like size and distance from its star.",
       data: [
         {
           dataTitle: "introduction & Characteristics",
@@ -155,7 +155,7 @@ function App() {
       ],
 
       description:
-        "Trappist-1e is one of seven Earth-sized exoplanets orbiting the ultra-cool dwarf star Trappist-1. It is located about 40 light-years away and is situated in the star's habitable zone.",
+        "Kepler-186b: The Groundbreaking Exoplanet That Redefines Our Understanding of Earth-Like Worlds, Orbiting a Red Dwarf Star in the Habitable Zone and Offering Exciting Possibilities for Alien Life",
       path: "/planets/model/kepler-186f.glb",
       scale: 3.5,
       fovPercentage: 2.1,
@@ -184,7 +184,7 @@ function App() {
       ],
 
       description:
-        "K2-18b is a super-Earth exoplanet located in the habitable zone of the red dwarf star K2-18, about 124 light-years away. It is notable for being one of the first exoplanets discovered to contain water vapor in its atmosphere.",
+        "Gliese 581d: The Intriguing Exoplanet That Raises Excitement Among Scientists for Its Potential Habitability, Located in the Habitable Zone of a Red Dwarf Star and Featuring Earth-Like Conditions for Life",
       path: "/planets/model4k/gliese_581_d.glb",
       scale: 0.003,
       fovPercentage: 2.2,
@@ -211,7 +211,7 @@ function App() {
       ],
 
       description:
-        "Kepler-452b is an exoplanet orbiting the star Kepler-452, which is similar to the Sun. It is located about 1,400 light-years away and is often referred to as 'Earth's cousin' due to its size and distance from its star.",
+        "HD 85512b: The Enigmatic Exoplanet That Captivates Astronomers with Its Earth-Like Qualities, Positioned in the Habitable Zone of a Sun-Like Star, Sparking Hopes for Discovering Life Beyond Our Solar System",
       path: "/planets/model/hd_85512_b.glb",
       scale: 0.003,
       fovPercentage: 2.1,
