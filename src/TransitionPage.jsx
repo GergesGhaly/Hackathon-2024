@@ -1,25 +1,30 @@
-// TransitionPage.jsx
-
-import { motion, useIsPresent } from "framer-motion";
+import { motion } from "framer-motion";
+// import background from "../src/assets/fantasy.jpg";
 
 const TransitionPage = ({ children }) => {
-  const isPresent = useIsPresent();
   return (
-    <>
+    <motion.div
+      className="slide-in"
+      initial={{ opacity: 0 }} // يبدأ العنصر مخفيًا
+      animate={{
+        opacity: 1,
+        transition: { duration: 0.5, ease: "circOut" },
+      }} // يظهر تدريجيًا
+      exit={{
+        opacity: 0,
+      transition: { duration: 0.5, ease: "circIn" },
+      }} // يختفي تدريجيًا
+      // style={{
+      //   // backgroundImage: `url(${background})`,
+      //   backgroundSize: "cover",
+      //   backgroundPosition: "center ",
+      //   minHeight: "100vh", // تأكد من تغطية الصفحة بالكامل
+      //   width: "100%",
+      //   position: "relative", // ضمان أن العنصر مرئي بشكل صحيح
+      // }}
+    >
       {children}
-      <motion.div
-        className="slide-in"
-        initial={{ scaleX: 1 }}
-        animate={{ scaleX: 0, transition: { duration: 0.5, ease: "circOut" } }}
-        exit={{ scaleX: 1, transition: { duration: 0.5, ease: "circIn" } }}
-        style={{ originX: isPresent ? 0 : 1 }}
-      >
-        {/* <img
-          src="https://png.pngtree.com/png-vector/20210604/ourmid/pngtree-chibi-astronaut-rides-a-rocket-png-image_3418107.jpg"
-          alt=""
-        /> */}
-      </motion.div>
-    </>
+    </motion.div>
   );
 };
 

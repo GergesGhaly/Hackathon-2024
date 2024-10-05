@@ -1,28 +1,27 @@
 import React, { useEffect, useState } from "react";
-import intro from "../src/assets/SPACE 4K Edit_Trim2n.mp4";
+// import intro from "../src/assets/SPACE 4K Edit_Trim2n.mp4";
 
 const Intro = ({ setShowIntro, isVideoPlaying, setIsVideoPlaying }) => {
   // const [isVideoPlaying, setIsVideoPlaying] = useState(false); // حالة لتحديد ما إذا كان الفيديو قيد التشغيل
   const [showMessage, setShowMessage] = useState(false);
 
   // تفعيل الرسالة بعد انتهاء الفيديو
-  useEffect(() => {
-    if (isVideoPlaying) {
-      const timer = setTimeout(() => {
-        setShowMessage(true);
-      }, 3000); // ظهور الرسالة بعد 10 ثواني من بدء الفيديو (تعديل حسب طول الفيديو)
+  // useEffect(() => {
+  //   if (isVideoPlaying) {
+  //     const timer = setTimeout(() => {
+  //       setShowMessage(true);
+  //     }, 3000); // ظهور الرسالة بعد 10 ثواني من بدء الفيديو (تعديل حسب طول الفيديو)
 
-      return () => clearTimeout(timer);
-    }
-   
+  //     return () => clearTimeout(timer);
+  //   }
 
-    // return () => clearTimeout(timerd);
-  }, [isVideoPlaying]);
+  //   // return () => clearTimeout(timerd);
+  // }, [isVideoPlaying]);
 
   // وظيفة بدء الفيديو
-  const handleImageClick = () => {
-    setIsVideoPlaying(true);
-  };
+  // const handleImageClick = () => {
+  //   setIsVideoPlaying(true);
+  // };
 
   // وظيفة للانتقال إلى الصفحة الرئيسية
   const handleContinueClick = () => {
@@ -34,20 +33,20 @@ const Intro = ({ setShowIntro, isVideoPlaying, setIsVideoPlaying }) => {
       {!isVideoPlaying ? (
         <div style={styles.startWraper}>
           <p className="team" style={styles.startWraperItem}>
-            Nasa Space Apps Team
+            space navigators Team
           </p>
           <p className="present" style={styles.startWraperItem}>
             Present
           </p>
           <p className="project-name" style={styles.startWraperItem}>
-            project name
+            Space navigators
           </p>
           <p
             className="start"
-            onClick={handleImageClick} // عند الضغط على الصورة، يبدأ الفيديو
+            onClick={handleContinueClick} // عند الضغط على الصورة، يبدأ الفيديو
             style={{ ...styles.startWraperItem, cursor: "pointer" }}
           >
-            Press to start journg
+            Press to start journey
           </p>
           {/* <img
             src="https://i.ebayimg.com/images/g/Uc8AAOSw6mZe5MMF/s-l1200.jpg"

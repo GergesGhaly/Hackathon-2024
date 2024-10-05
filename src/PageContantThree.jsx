@@ -1,10 +1,10 @@
-const PageContantThree = () => {
+const PageContantThree = ({planet}) => {
   // Function to scroll the page up by 100vh
   const scrollToTop = (e) => {
-    e.preventDefault(); // Prevent the default behavior of the link
-    window.scrollTo({
-      top: 0, // Scroll the page to the top of the viewport (100vh to the top)
-      behavior: "smooth", // Smooth scrolling
+    e.preventDefault(); // منع السلوك الافتراضي للرابط
+    window.scrollBy({
+      top: window.innerHeight, // التمرير لأسفل بمقدار ارتفاع العرض (100vh)
+      behavior: "smooth", // التمرير بسلاسة
     });
   };
 
@@ -37,15 +37,13 @@ const PageContantThree = () => {
       >
         <p
           style={{
+            fontSize: "20px",
             padding: "15px 0",
             lineHeight: "1.5",
           }}
         >
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos
-          reprehenderit cumque, modi voluptates earum doloremque aliquid saepe.
-          reprehenderit cumque, modi voluptates earum doloremque aliquid saepe.
-          reprehenderit cumque, modi voluptates earum doloremque aliquid saepe.
-          reprehenderit cumque, modi voluptates earum doloremque aliquid saepe.
+          <h2>{planet?.data[2]?.dataTitle}</h2>
+          <p>{planet?.data[2]?.datadetails}</p>
         </p>
         <a
           href="#"
@@ -56,7 +54,7 @@ const PageContantThree = () => {
             cursor: "pointer",
           }}
         >
-          Back To Top
+          To free mode
         </a>
       </div>
     </div>

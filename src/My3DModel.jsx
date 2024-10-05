@@ -1,21 +1,56 @@
 import { Suspense, useEffect, useRef, useState } from "react";
-import { Canvas } from "@react-three/fiber";
+import { Canvas, useLoader, useThree } from "@react-three/fiber";
 import { OrbitControls, useGLTF } from "@react-three/drei";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Loading from "./Loading";
+import { TextureLoader } from "three";
+import { useLocation } from "react-router-dom";
+import * as THREE from "three";
 
 // تسجيل ScrollTrigger مع GSAP
 gsap.registerPlugin(ScrollTrigger);
 
 function Model() {
-  const { scene } = useGLTF("/earth.glb");
-  return <primitive object={scene} scale={1.2} />;
+  const location = useLocation();
+  const planet = location.state?.planet;
+  console.log("3d model ", planet);
+
+  const { scene } = useGLTF(planet.path);
+  // const texture = useLoader(TextureLoader, "/planets/textures/download.jpg");
+
+  // scene.traverse((child) => {
+  //   if (child.isMesh) {
+  //     child.material.map = texture; // إضافة الـ Texture إلى المادة
+  //   }
+  // });
+
+  return <primitive object={scene} scale={1} />;
 }
 
-function AnimatedModel() {
+function AnimatedModel({ planet }) {
   const modelRef = useRef(); // نستخدم useRef للتحكم في المجموعة
-  const [scale, setScale] = useState(3);
+  const [scale, setScale] = useState(planet?.scale);
   const orbitControlsRef = useRef(); // للتحكم في OrbitControls
+  const { camera } = useThree();
+
+  // useEffect(() => {
+  //   if (modelRef.current) {
+  //     const box = new THREE.Box3().setFromObject(modelRef.current);
+  //     const size = new THREE.Vector3();
+  //     box.getSize(size);
+
+  //     const maxDim = Math.max(size.x, size.y, size.z);
+  //     const fov = camera.fov * (Math.PI / 180);
+  //     let distance = Math.abs(
+  //       maxDim / (2 * Math.tan(fov / planet.fovPercentage))
+  //     );
+  //     distance *= 1.2;
+
+  //     camera.position.set(0, 0, distance);
+  //     camera.updateProjectionMatrix();
+  //   }
+  // }, [modelRef, camera]);
 
   useEffect(() => {
     if (!modelRef.current) return;
@@ -35,9 +70,9 @@ function AnimatedModel() {
       onEnterBack: () => {
         gsap.to(modelRef.current?.position, { y: -2, x: 0, duration: 1 });
         gsap.to(modelRef.current?.scale, {
-          x: 3, // تصغير الحجم إلى النصف
-          y: 3,
-          z: 3,
+          x: scale, // تصغير الحجم إلى النصف
+          y: scale,
+          z: scale,
           duration: 1,
         });
         gsap.to(modelRef.current?.rotation, {
@@ -51,7 +86,7 @@ function AnimatedModel() {
     // تحريك العنصر لليمين وتصغير الحجم مع الدوران في section 2
     ScrollTrigger.create({
       trigger: "#section-2",
-      start: "-50% top",
+      start: "-25% top",
       end: "bottom top",
       scrub: true, // للتفاعل السلس
       toggleActions: "play reverse play reverse", // لتطبيق الحركات العكسية عند التمرير لأعلى
@@ -79,7 +114,7 @@ function AnimatedModel() {
           duration: 1,
         });
         gsap.to(modelRef.current?.rotation, {
-          y: 10, // دوران الموديل حول محوره
+          // y: 10, // دوران الموديل حول محوره
           duration: 5,
           // ease: "power1.inOut",
         });
@@ -96,13 +131,18 @@ function AnimatedModel() {
 
       onEnter: () => {
         gsap.to(modelRef.current?.position, {
-          x: 1.2,
+          x: scale,
           y: 0,
-          z: -1,
+          // z: -1,
           duration: 2,
           ease: "power1.inOut",
         });
-        gsap.to(modelRef.current?.scale, { x: 4, y: 4, z: 3.5, duration: 2 });
+        gsap.to(modelRef.current?.scale, {
+          x: scale,
+          y: scale,
+          z: scale,
+          duration: 2,
+        });
       },
     });
 
@@ -137,7 +177,12 @@ function AnimatedModel() {
           duration: 2,
           ease: "power1.inOut",
         });
-        gsap.to(modelRef.current?.scale, { x: 4, y: 4, z: 4, duration: 2 });
+        gsap.to(modelRef.current?.scale, {
+          x: scale,
+          y: scale,
+          z: scale,
+          duration: 2,
+        });
         if (orbitControlsRef.current) {
           orbitControlsRef.current.enabled = false;
         }
@@ -156,17 +201,14 @@ function AnimatedModel() {
   );
 }
 
-export default function My3DModel() {
+export default function My3DModel({ planet }) {
   return (
-    <div id="canvas-container" style={{ height: "100%" }}>
-      <Canvas>
-        <ambientLight intensity={1} />
-        <directionalLight position={[5, 5, 10]} intensity={1} />
-
-        <Suspense fallback={"Loading..."}>
-          <AnimatedModel />
-        </Suspense>
-      </Canvas>
-    </div>
+    <Canvas>
+      <ambientLight intensity={1} />
+      <directionalLight position={[5, 5, 10]} intensity={1} />
+      <Suspense fallback={<Loading />}>
+        <AnimatedModel planet={planet} />
+      </Suspense>
+    </Canvas>
   );
 }

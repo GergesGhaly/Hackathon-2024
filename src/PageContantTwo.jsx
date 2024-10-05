@@ -1,4 +1,4 @@
-const PageContantTwo = () => {
+const PageContantTwo = ({ planet }) => {
   // Function to scroll the page up by 100vh
   const scrollToNextSection = (e) => {
     e.preventDefault(); // منع السلوك الافتراضي للرابط
@@ -7,11 +7,14 @@ const PageContantTwo = () => {
       behavior: "smooth", // التمرير بسلاسة
     });
   };
-  
+
   return (
     <div
       id="section-2"
+      className="sectoion"
       style={{
+        // scrollSnapAlign: "start",
+
         display: "grid",
         gridTemplateColumns: "1fr 1fr",
         position: "relative",
@@ -36,14 +39,14 @@ const PageContantTwo = () => {
           gap: "30px",
         }}
       >
-        <h6
+        {/* <h6
           style={{
             fontSize: "45px",
             fontWeight: "bold",
           }}
         >
           Hello World From Earth Planet
-        </h6>
+        </h6> */}
         <p
           style={{
             padding: "10px 0",
@@ -51,11 +54,8 @@ const PageContantTwo = () => {
             fontSize: "17px",
           }}
         >
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos
-          reprehenderit cumque, modi voluptates earum doloremque aliquid saepe.
-          reprehenderit cumque, modi voluptates earum doloremque aliquid saepe.
-          reprehenderit cumque, modi voluptates earum doloremque aliquid saepe.
-          reprehenderit cumque, modi voluptates earum doloremque aliquid saepe.
+          <h2>{planet?.data[1]?.dataTitle}</h2>
+          <p>{planet?.data[1]?.datadetails}</p>
         </p>
         <a
           href="#"

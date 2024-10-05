@@ -41,8 +41,9 @@ function PageContantFour() {
         <Link to="/">
           <h6 style={{ fontSize: "18px" }}>Back</h6>
         </Link>
-        <h6 style={{ fontSize: "18px" }}>free to check..</h6>
-        <a
+        <h6 style={{ fontSize: "18px",alignSelf:"center" }}>Free mode</h6>
+        <h1></h1>
+        {/* <a
           // href="#section-3"
           onClick={scrollToNextSection} // Call the scroll function to the top when clicked
           style={{
@@ -52,7 +53,7 @@ function PageContantFour() {
           }}
         >
           Top
-        </a>
+        </a> */}
       </div>
     </div>
   );
