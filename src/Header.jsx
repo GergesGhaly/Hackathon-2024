@@ -62,7 +62,7 @@ const Header = () => {
         }}
       >
         <Link to="/share">Share</Link>
-        <Link to="/about">?</Link>
+        <Link to="/about">ِAbout</Link>
       </div>
     </div>
   );
