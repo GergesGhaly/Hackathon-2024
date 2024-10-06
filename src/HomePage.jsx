@@ -39,43 +39,6 @@ const HomePage = ({
 }) => {
   const [isAppReady, setIsAppReady] = useState(false); // Tracks loading state for all resources
 
-  // const [activeIndex, setActiveIndex] = useState(0);
-  // const [planetData, setPlanetData] = useState([]);
-
-  // إنشاء البيانات الخاصة بكل كوكب بناءً على موضعه في الدائرة
-  // useEffect(() => {
-  //   const numPlanets = 5; // عدد الكواكب
-  //   const radius = 200; // نصف قطر الدائرة
-  //   const angleStep = (2 * Math.PI) / numPlanets; // زاوية كل كوكب
-
-  //   const planets = [...Array(numPlanets)].map((_, index) => {
-  //     const angle = index * angleStep;
-  //     const x = radius * Math.cos(angle); // حساب الإحداثيات السينية
-  //     const y = radius * Math.sin(angle); // حساب الإحداثيات الصادية
-  //     const scale = 1.5 + Math.sin(angle); // مقياس العنصر بناءً على موقعه
-
-  //     return { x, y, scale };
-  //   });
-
-  //   setPlanetData(planets);
-  // }, []);
-
-  // const params = {
-  //   effect: "coverflow",
-  //   grabCursor: true,
-  //   centeredSlides: true,
-  //   slidesPerView: 3,
-  //   coverflowEffect: {
-  //     rotate: 50,
-  //     stretch: 0,
-  //     depth: 100,
-  //     modifier: 1,
-  //   },
-  //   onSlideChange: (swiper) => {
-  //     setActiveIndex(swiper.activeIndex);
-  //   },
-  // };
-
   return (
     <div
       style={{

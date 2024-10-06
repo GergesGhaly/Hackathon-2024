@@ -1,20 +1,6 @@
 import { Link } from "react-router-dom";
 import logo from "../src/assets/image/logo.png";
 const Header = () => {
-  // const scrollToNextSection = (e) => {
-  //   e.preventDefault(); // Prevent the default behavior of the link
-  //   window.scrollTo({
-  //     top: window.innerHeight, // Scroll the page down by the height of the screen (100vh)
-  //     behavior: "smooth", // Smooth scrolling
-  //   });
-  // };
-  // const scrollToTop = (e) => {
-  //   e.preventDefault(); // Prevent the default behavior of the link
-  //   window.scrollTo({
-  //     top: 0, // Scroll the page to the top (100vh upwards)
-  //     behavior: "smooth", // Smooth scrolling
-  //   });
-  // };
 
   return (
     <div
