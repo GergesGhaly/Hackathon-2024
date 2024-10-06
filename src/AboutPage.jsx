@@ -4,12 +4,13 @@ import React, { useEffect, useState } from "react";
 const AboutPage = () => {
   // Could be GET or POST/PUT/PATCH/DELETE
   const [team, setTeam] = useState([]);
-  console.log(team)
   useEffect(() => {
     fetch("https://nasaspaceapps.azurewebsites.net/api/Account/team-members")
       .then((res) => res.json())
-      .then((data) => setTeam(data.value));
-  });
+      .then((data) => setTeam(data.value))
+      .catch((err) => console.log(err));
+  }, []);
+  // console.log("team",team)
   /* { status: 'ok', method: 'GET' } */
   return (
     <div
@@ -42,22 +43,22 @@ const AboutPage = () => {
           return (
             <div key={index} className="card">
               <img
-                src={teamMember.pictureUrl}
-                alt={teamMember.name}
+                src={teamMember?.pictureUrl}
+                alt={teamMember?.name}
                 className="card-img"
               />
               <div className="overlay">
-                <h1 className="text-h1">{teamMember.name}</h1>
-                <p className="text-p">{teamMember.position}</p>
-                {teamMember.linkedInUrl&&
-                <a
-                href={teamMember.linkedInUrl}
-                target="_blank"
-                className="link-a"
-                >
-                  LinkedIn
-                </a>
-                }
+                <h1 className="text-h1">{teamMember?.name}</h1>
+                <p className="text-p">{teamMember?.position}</p>
+                {teamMember.linkedInUrl && (
+                  <a
+                    href={teamMember?.linkedInUrl}
+                    target="_blank"
+                    className="link-a"
+                  >
+                    LinkedIn
+                  </a>
+                )}
               </div>
             </div>
           );

@@ -222,6 +222,7 @@ const AddShareModal = ({ setModal, fetchData }) => {
             )}
             <input
               type="text"
+              required
               value={name}
               onChange={(e) => setName(e.target.value)}
               style={{
@@ -235,6 +236,7 @@ const AddShareModal = ({ setModal, fetchData }) => {
             />
 
             <input
+              required
               type="text"
               value={comment}
               onChange={(e) => setComment(e.target.value)}
@@ -249,6 +251,7 @@ const AddShareModal = ({ setModal, fetchData }) => {
             />
 
             <input
+              required
               type="text"
               value={bestPlanet}
               onChange={(e) => setBestPlanet(e.target.value)}

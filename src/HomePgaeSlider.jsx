@@ -183,12 +183,22 @@ const HomePgaeSlider = ({
                 {item.name}
                 {/* {index} */}
               </h1>
-              <h5 style={{ color: "#ffffff",fontWeight:"300" }}>{item.description}</h5>
+              <h5
+                className="planet-description"
+                style={{ color: "#ffffff", fontWeight: "300" }}
+              >
+                {item.description}
+              </h5>
               <button
                 style={{
-                  padding: "2px  ",
+                  padding: "5px 17px",
+                  border: "none",
+                  borderRadius: "25px",
+                  backgroundColor: "#a997978d",
+                  fontSize: "1rem",
+                  fontWeight: "600",
+                  cursor: "pointer",
                   marginTop: "5px",
-                  backgroundColor: "#ffffff8bf",
                 }}
                 onClick={() => handleVisitPlanet(item)}
               >

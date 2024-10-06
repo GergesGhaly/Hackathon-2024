@@ -9,21 +9,25 @@ const Share = () => {
 
   const openModal = () => {
     setModal(true);
-    console.log(modal);
+    // console.log(modal);
   };
 
-  const fetchData=()=>{
+  const fetchData = () => {
     setLoading(true);
     fetch(
       "https://nasaspaceapps.azurewebsites.net/api/Contribution/contributions"
     )
       .then((res) => res.json())
-      .then((data) => setTeam(data));
+      .then((data) => setTeam(data))
+      .catch((err) => console.log(err));
     setLoading(false);
-  }
+  };
+
+  console.log("share", team);
+
   useEffect(() => {
-    fetchData()
-  });
+    fetchData();
+  }, []);
 
   if (loading) {
     return <Loading />;
@@ -99,8 +103,8 @@ const Share = () => {
               key={index}
             >
               <img
-                src={teamMember.imageUrl}
-                alt={teamMember.name}
+                src={teamMember?.imageUrl}
+                alt={teamMember?.name}
                 style={{
                   display: "flex",
                   //   flexDirection: "column",
@@ -134,10 +138,10 @@ const Share = () => {
                     width: "100%",
                   }}
                 >
-                  {teamMember.name}
+                  {teamMember?.name}
                 </h1>
-                <p> favorite Planet: {teamMember.favoritePlanet}</p>
-                <p> score : {teamMember.score}</p>
+                <p> favorite Planet: {teamMember?.favoritePlanet}</p>
+                <p> score : {teamMember?.score}</p>
                 {/* <a
                   href={teamMember.linkedInUrl}
                   target="_blank"

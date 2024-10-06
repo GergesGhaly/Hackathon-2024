@@ -223,6 +223,9 @@ Canvas {
     display: flex !important;
   }
  */
+  .planet-description {
+    display: none;
+  }
   #section-1 h1 {
     font-size: 2.5rem !important;
   }
