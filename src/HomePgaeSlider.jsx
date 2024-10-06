@@ -215,10 +215,10 @@ const HomePgaeSlider = ({
       </ul>
       <div className="btns-waper">
         <button className="swiper-btn next" onClick={() => handleNext()}>
-          next
+          &lt;&lt;
         </button>
         <button className="swiper-btn prev" onClick={() => handlePrev()}>
-          prev
+          &gt;&gt;
         </button>
       </div>
       {!isScrollIconVisable && <ScrollIcone />}
