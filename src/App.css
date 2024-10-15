@@ -5,6 +5,20 @@
   text-decoration: none;
 }
 @font-face {
+  font-family: "Modular";
+  src: url("./assets/fonts/Modular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "ComicSans";
+  src: url("./assets/fonts/ComicSansMS3.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
   font-family: "Burelom";
   src: url("./assets/fonts/FontsFree-Net-burelom-regular.ttf")
     format("truetype");
@@ -13,7 +27,7 @@
 }
 
 body {
-  font-family: "Burelom", sans-serif;
+  font-family: ComicSans;
 }
 
 a {
@@ -212,6 +226,10 @@ Canvas {
 }
 .swiper-btn.next {
   right: 0;
+}
+
+.planet-description {
+  font-family: ComicSans;
 }
 
 @media screen and (max-width: 700px) {

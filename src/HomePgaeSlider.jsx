@@ -179,13 +179,13 @@ const HomePgaeSlider = ({
               }}
             >
               {/* <h5 style={{ color: "white" }}>planet</h5> */}
-              <h1 style={{ color: "#eff0cd" }}>
+              <h1 style={{ color: "#eff0cd",fontFamily:"Modular" }}>
                 {item.name}
                 {/* {index} */}
               </h1>
               <h5
                 className="planet-description"
-                style={{ color: "#ffffff", fontWeight: "300" }}
+                style={{ color: "#ffffff", fontWeight: "300",fontFamily:"ComicSans" }}
               >
                 {item.description}
               </h5>
@@ -199,6 +199,7 @@ const HomePgaeSlider = ({
                   fontWeight: "600",
                   cursor: "pointer",
                   marginTop: "5px",
+                  fontFamily:"Modular"
                 }}
                 onClick={() => handleVisitPlanet(item)}
               >
